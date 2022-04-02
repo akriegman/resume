@@ -1,0 +1,307 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.2, 11 February 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e]{altacv}
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage{multicol}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Sepia}
+\colorlet{accent}{Mulberry}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Aaron Kriegman}
+\tagline{Software Engineer and Mathematician}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{Calabi-yau}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{aaronkplus2@gmail.com}
+  \phone{617-615-1613}
+  \mailaddress{20 Dorcar Rd, Newton, MA, 02467}
+  \github{\href{https://github.com/akriegman}{akriegman}}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Projects}
+
+\cvevent{Metrica}{}{}{}
+A building game in non-Euclidean geometry made in Unity with GlmSharp, with my own graphics shaders and physics implementation using quaternions. Check it out on \href{https://youtu.be/MtrgYVnKpGE}{YouTube}.
+
+\medskip
+
+\cvevent{Wave Simulation}{}{}{}
+An interactive simulation of the wave equation in C++ using convolutions and FFTs from the Eigen Tensor module, with SFML. Check it out on \href{https://github.com/akriegman/WaveSimulation}{GitHub} for pictures.
+
+\medskip
+
+\cvevent{Liquid Go}{}{}{}
+A game based on Liquid Wars and Go, made with React.js and Rust using Wasm-Bindgen, WebRTC, Socket.IO, R*-trees, and more. Check it out at \href{https://liquidgo.xyz}{liquidgo.xyz}.
+
+\medskip
+
+Check out my \href{https://github.com/akriegman}{GitHub} to see more projects with pictures.
+
+\medskip
+
+\cvsection{Coursework \& Grades}
+
+\cvcourse{Interactive Computer Graphics}{4.0}
+\begin{itemize}
+    \item Using OpenGL in C++ with Qt
+    % \item Created a replica of Minecraft for our final project
+    \item Graduate course at University of Pennsylvania
+\end{itemize}
+
+\cvcourse{Computer Organization}{4.0}
+\begin{itemize}
+    \item Created a working CPU in Logisim for my final project
+\end{itemize}
+
+\cvcourse{Computational Geometry}{3.7}
+
+% \cvcourse{Introduction to Biometrics}{Pass}
+% \begin{itemize}
+%     \item Using Scipy, Numpy, Pandas, and more in Python
+%     \item Created systems to identify users based on walking, typing, and swiping patterns
+% \end{itemize}
+
+\cvcourse{Information Theory and Data Science}{4.0}
+
+\cvcourse{Analysis of Algorithms}{4.0}
+\begin{itemize}
+    \item With data structures as a prerequisite
+\end{itemize}
+
+\cvcourse{Lie Groups and Representation Theory}{4.0}
+\begin{itemize}
+    \item Graduate course at University of Pennsylvania
+\end{itemize}
+
+%\cvcourse{Elliptic Curves}{3.7}
+
+\cvcourse{Mathematical Economics}{4.0}
+
+\cvsection{Experience}
+
+\cvevent{Software Engineering Intern}{DreamsAI}{July 2021 - September 2021}{Cambridge, UK}
+\begin{itemize}
+    \item Worked on a cryptocurrency fintech service. Used technologies including PostgreSQL, Express.js, Jest, React, Linux, Bash, cURL to interact directly with the Ethereum Blockchain, and more.
+\end{itemize}
+
+\cvevent{Math Camp Counselor}{Ross Mathematics Program at Ohio State University}{June 2020 - Aug 2020}{online}
+
+% \medskip
+
+% \cvevent{Private Tutoring in Math and Physics}{}{March 2020 - Sep 2020}{}
+
+\medskip
+
+\cvevent{Research Experience for Undergraduates}{Texas A\&M University}{June 2019 - Aug 2019}{College Station, TX}
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Riad Masri}{Texas A\&M University}{masri@math.tamu.edu}
+
+% \cvref{Prof.\ Giri Parameswaran}{Haverford College}{gparames@haverford.edu}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Languages}
+
+\cvskill{C++}{5}
+\smallskip
+
+\strut\hfill
+\cvtag{OpenGL}
+\cvtag{Eigen Tensors}
+\cvtag{Qt}
+\cvtag{SFML}
+
+\medskip
+
+\cvskill{C\#}{5}
+\smallskip
+\cvtag{Unity}
+
+\medskip
+
+\cvskill{Python}{5}
+\smallskip
+
+\strut\hfill
+\cvtag{Numpy}
+\cvtag{Scipy}
+\cvtag{Pandas}
+\cvtag{Sage}
+
+\medskip
+
+\cvskill{Rust}{5}
+\smallskip
+
+\strut\hfill
+\cvtag{Wasm-bindgen}
+\cvtag{Nannou}
+
+\medskip
+
+\cvskill{Bash}
+\smallskip
+
+\strut\hfill
+\cvtag{binutils}
+\cvtag{cURL}
+\cvtag{Systemd}
+% \cvtag{sed}
+
+\medskip
+
+% \cvskill{GLSL and HLSL}{4}
+\cvskill{Javascript}{4}
+\smallskip
+
+\hbox{
+\cvtag{WebRTC}
+\cvtag{React}
+\cvtag{Socket.IO}
+\cvtag{Express}
+}
+
+% \medskip
+
+% \cvskill{Java}{4}
+% \smallskip
+% \cvtag{Processing}
+
+% \medskip
+
+% \cvskill{Julia}{}
+% \smallskip
+% \cvtag{ForwardDiff}
+
+\cvsection{Education}
+
+\cvevent{BA.\ in Mathematics (in progress)}{University of Cambridge}{Oct 2020 -- June 2023}{}
+\cvevent{}{Haverford College}{Sept 2018 -- June 2020}{}
+Studied mathematics and computer science at Haverford for two years then transferred to Cambridge.
+
+\cvsection{Most Proud of}
+
+\cvachievement{\faTrophy}{USA Mathematics Olympiad}{Qualified twice in 2017 and 2018.}
+
+\divider
+
+\cvachievement{\faTrophy}{Putnam Mathematics Competition Top 500}{Came in top 500 in the US's premier college mathematics competition twice, in 2018 and 2019.}
+
+\cvsection{My Plans}
+Currently studying mathematics at Cambridge University. Looking for internships and considering taking a gap year to work.
+
+\cvsection{Publications}
+
+\nocite{*}
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFileTextO}{Journal Articles}},type=article]
+
+% \cvsection{Strengths}
+
+% \cvtag{Algorithms}
+% \cvtag{Data structures}\\
+% \cvtag{Geometry}
+% \cvtag{Graphics}
+% \cvtag{Algebra}\\
+% \cvtag{Advanced Mathematics}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vpsace etc to make ajustments.
+\medskip
+
+% \divider
+
+
+\end{paracol}
+
+
+\end{document}
